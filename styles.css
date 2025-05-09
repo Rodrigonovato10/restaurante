@@ -1,51 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
 }
 
-.background-video{
-   
-    position: fixed; /* Fixa o vídeo no plano de fundo */
-    top: 0;  
-    left: 0;   
-    width: 100%; 
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz o vídeo cobrir toda a área */
-    z-index: -5; /* Mantém o vídeo atrás de todo o conteúdo */
+    object-fit: cover;
+    z-index: -5;
 }
 
-.prime{
+.prime {
     display: grid;
     color: aliceblue;
     justify-content: center;
     align-items: center;
     font-weight: 900;
     font-size: 20px;
-    font-weight: bold;
-    text-shadow:2px 2px 0 #00BCD4; /* Cria a borda ao redor do texto */;
-}   
- 
-.centro{  
-    margin-left: 99px;
+    text-shadow: 2px 2px 0 #00BCD4;
+    text-align: center;
+    padding: 15px;
 }
 
-
-
-
-.conteiner-bottons{
-margin: 30px 0;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
+.centro {
+    margin-left: 0;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-button{
+.conteiner-bottons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
     background-color: #79cb15;
     border: 4px solid #FFFF;
     border-radius: 5px;
@@ -54,49 +56,107 @@ button{
     cursor: pointer;
     font-weight: bold;
     width: 110px;
+    transition: opacity 0.3s ease;
 }
-button:hover{
+
+button:hover {
     opacity: 0.8;
 }
 
-ul{
+ul {
     list-style: none;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: repeat(3, 200px);
     gap: 20px;
     justify-content: center;
     align-items: center;
-
-    
+    padding: 0 15px;
 }
- li{
-  border: 2px solid  #ffeb3b;
-  border-radius:5px;
-  padding: 5px;
-  
- }
- bloco{
+
+li {
+    border: 2px solid #ffeb3b;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+bloco {
     border: 2px solid #8133ff;
     border-radius: 5px;
     padding: 5px;
-    width:100px;
-}
-img{
-width: 100%;
-border-radius: 5px;
+    width: 100%;
+    display: block;
 }
 
-.total{
-    color:#46d1e3;
-    font-weight: bold;
-    text-shadow:3px 3px 0 #191e1e
+img {
+    width: 100%;
+    border-radius: 5px;
 }
 
-p{
-    color:#FFFF
-}
-.items-price{
-    color:#00BCD4;
+.total {
+    color: #46d1e3;
     font-weight: bold;
-    text-shadow:3px 3px 0 #191e1e
-   }
+    text-shadow: 3px 3px 0 #191e1e;
+}
+
+p {
+    color: #FFFF;
+}
+
+.items-price {
+    color: #00BCD4;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 #191e1e;
+}
+
+/* Media Queries para responsividade */
+
+/* Tablets (768px até 1024px) */
+@media screen and (max-width: 1024px) {
+    .prime {
+        font-size: 18px;
+    }
+    
+    ul {
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
+/* Celulares (até 767px) */
+@media screen and (max-width: 767px) {
+    .prime {
+        font-size: 16px;
+    }
+    
+    .conteiner-bottons {
+        gap: 10px;
+    }
+    
+    button {
+        width: 100px;
+        padding: 8px;
+    }
+    
+    ul {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media screen and (max-width: 480px) {
+    .prime {
+        font-size: 14px;
+    }
+    
+    .conteiner-bottons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    button {
+        width: 90%;
+        max-width: 200px;
+    }
+}
